@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Método de Sección Dorada{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Método de Programación Cuadrática</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-50 min-h-screen flex flex-col items-center">
+    <header class="w-full bg-blue-700 p-4 text-white text-center">
+        <h1 class="text-3xl font-bold">Método de Programación Cuadrática</h1>
+    </header>
+    <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-2xl mt-8">
+        <h2 class="text-xl font-semibold text-blue-700 mb-4">¿Qué es el Método de Programación Cuadrática?</h2>
+        <p class="text-gray-700">El método de programación cuadrática es una técnica de optimización que se utiliza para resolver problemas en los que la función objetivo es una función cuadrática y las restricciones son lineales. Se puede formular de la siguiente manera:</p>
+        <p class="text-gray-700"><em>Minimizar</em> \( f(x) = \frac{1}{2} x^T Q x + c^T x \)</p>
+        <p class="text-gray-700"><em>Sujeto a</em> \( Ax \leq b \)</p>
+        <p class="text-gray-700">Donde \( Q \) es una matriz simétrica positiva definida, \( c \) es un vector de coeficientes, \( A \) es una matriz de coeficientes de restricciones y \( b \) es un vector de términos independientes.</p>
+    </section>
+
+    <main class="flex-1 flex flex-col items-center w-full p-6">
+        <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-2xl">
+            <h2 class="text-xl font-semibold text-blue-700 mb-4">Formulario de Entrada</h2>
+            <form method="post" id="myForm" class="space-y-4">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" name="button2" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Enviar</button>
+            </form>
+        </section>
+
+        <section class="bg-white shadow-md rounded-lg p-6 w-full max-w-2xl mt-8">
+            <h2 class="text-xl font-semibold text-blue-700 mb-4">Resultados</h2>
+            <pre class="bg-gray-100 p-4 rounded">{{ resultado }}</pre>
+        </section>
+    </main>
+    <footer class="w-full bg-blue-700 p-4 text-white text-center">
+        <p>&copy; 2024 Método de Programación Cuadrática</p>
+    </footer>
+
+</body>
+</html>
+{% endblock %}
