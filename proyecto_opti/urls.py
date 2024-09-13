@@ -22,7 +22,7 @@ from no_lineal import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dorada/', views.seccion_dorada, name='seccion_dorada'),
-    path('multiplicadores/', views.multiplicadores, name='multiplicadores'),
+    path('', views.multiplicadores, name='multiplicadores'),
     path('gradiente/', views.gradiente, name='gradiente'),
     path('cuadratica/', views.cuadratica, name='cuadratica'),
     path('combinaciones_lineales/', views.combinaciones_lineales, name='combinaciones_lineales'),
